@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="flowgo_modul2_no1"/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-06 09:05:55 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0RFU0tUT1AtQjNKOEw2STsyMDI2LTEwLTA2OzA3OjU5OjA2IFBNOzI3ODg="/>
+        <attribute name="edited" value="TEVOT1ZPO0RFU0tUT1AtQjNKOEw2STsyMDI2LTEwLTA2OzA5OjA1OjU1IFBNOzE7Mjg5Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="pin, digit1, digit2, digit3, nilaipelacak" type="Integer" array="False" size=""/>
+            <output expression="&quot;masukkan 3 digit angka = &quot;" newline="True"/>
+            <input variable="pin"/>
+            <assign variable="digit1" expression="int(pin / 100)"/>
+            <output expression="&quot;digit pertama adalah = &quot; &amp;digit1" newline="True"/>
+            <assign variable="digit2" expression="int(pin / 10 ) % 10"/>
+            <output expression="&quot;digit kedua adalah = &quot; &amp;digit2" newline="True"/>
+            <assign variable="digit3" expression="pin % 10"/>
+            <output expression="&quot;digit ketiga adalah = &quot; &amp;digit3" newline="True"/>
+            <assign variable="nilaipelacak" expression="digit1 * digit3"/>
+            <output expression="&quot;nilai pelacak tahap pertama adalah = &quot; &amp;nilaipelacak" newline="True"/>
+            <output expression="&quot;perubahan nilai pelacak tahap pertama&quot;" newline="True"/>
+            <if expression="digit2 % 2 == 0">
+                <then>
+                    <output expression="&quot;dikurangi angka digit2 = &quot; &amp;nilaipelacak - digit2" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;maka ditambah 25 = &quot; &amp;nilaipelacak + 25" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;perubahan nilai pelacak tahap kedua&quot;" newline="True"/>
+            <if expression="nilaipelacak % 3 == 0">
+                <then>
+                    <output expression="&quot;maka dibagi 3 = &quot; &amp;nilaipelacak / 3" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;maka dikalikan 2 = &quot; &amp;nilaipelacak * 2" newline="True"/>
+                </else>
+            </if>
+            <if expression="nilaipelacak &gt; 50">
+                <then>
+                    <output expression="&quot;maka nilai pelacak kategori A&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="nilaipelacak &gt; 20">
+                        <then>
+                            <output expression="&quot;maka nilai pelacak kategori B&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;password ditolak&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="nilaipelacak % 2 == 0">
+                <then>
+                    <output expression="&quot;nilai pelacak adalah genap&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;nilai pelacak adalah ganjil&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
